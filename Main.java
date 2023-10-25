@@ -23,6 +23,7 @@ public class Main implements ActionListener {
     private JFrame frame1;
     private JFrame frame11;
     private JFrame gFrame;
+    private JFrame frameFileDirectory;
     private JButton button1;
     private JButton button2;
     private JButton button3;
@@ -34,6 +35,7 @@ public class Main implements ActionListener {
     private JPanel panel1;
     private JPanel panel11;
     private JPanel gPanel;
+    private JPanel paneFileDirectory;
     private JTextArea textFilmList;
     private JTextField userTextFilm;
     private JTextField userDeletedFilm;
@@ -55,7 +57,7 @@ public class Main implements ActionListener {
         films = new ArrayList<>();
         frame = new JFrame();
         frame.setSize(500, 500);
-        button1 = new JButton("Wyświetl listę");
+        button1 = new JButton("Wybierz lokalizacje zapisu");
         button1.setBounds(160, 50, 180, 25);
         button2 = new JButton("Dodaj film");
         button2.setBounds(160, 80, 180, 25);
@@ -360,9 +362,20 @@ public class Main implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+    frameFileDirecroty = new JFrame();
+    panelFileDirectory = new JPanel();
+    frameFileDirectory.setSize(300, 500);
 
-        printList();
+    textAreaFileD = new JTextArea();
+    ButtonSelect = new JButton("Zapisz lokalizacje pliku");
+    ButtonSelect.addActionListener(this::saveFileDirectory)
 
+    
+    panelFileDirectory.add(ButtonSelect)
+
+    }
+    public void saveFileDirectory(ActionEvent e) {
+        
     }
 
     public void actionRandom(ActionEvent e) {
